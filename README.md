@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js 투두 앱
 
-## Getting Started
+Next.js와 TypeScript를 이용한 간단한 투두 리스트 애플리케이션입니다.
 
-First, run the development server:
+## 📋 기능
+
+- 투두 아이템 추가/삭제/수정
+- 완료 상태 토글
+- 로컬 스토리지를 이용한 데이터 저장
+- 날짜별 투두 아이템 그룹화
+- 반응형 디자인
+
+## 🚀 기술 스택
+
+- [Next.js 14](https://nextjs.org/) - React 프레임워크
+- [TypeScript](https://www.typescriptlang.org/) - 타입 시스템
+- [Tailwind CSS](https://tailwindcss.com/) - 스타일링
+- [ESLint](https://eslint.org/) - 코드 린팅
+
+## 📦 설치 및 실행
 
 ```bash
+# 저장소 복제
+git clone https://github.com/your-username/nextjs-todo-app.git
+cd nextjs-todo-app
+
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 구조
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+nextjs-todo-app/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── TodoForm.tsx
+│   │   │   ├── TodoItem.tsx
+│   │   │   └── TodoList.tsx
+│   │   ├── types/
+│   │   │   └── index.ts
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   └── ...
+├── docs/
+│   └── LEARNING.md
+├── public/
+├── .gitignore
+├── next.config.ts
+├── package.json
+├── README.md
+└── tsconfig.json
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📚 학습 내용
 
-## Learn More
+이 프로젝트를 통해 Next.js의 다양한 기능과 개념을 학습했습니다. 자세한 내용은 [학습 노트](./docs/LEARNING.md)를 참조하세요.
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 배포
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+이 프로젝트는 [Vercel](https://vercel.com)을 통해 배포되었습니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 라이브 데모: [https://nextjs-todo-app-demo.vercel.app](https://nextjs-todo-app-demo.vercel.app) (예시 링크)
 
-## Deploy on Vercel
+## 🤝 기여하기
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. 이 저장소를 포크합니다
+2. 새 브랜치를 생성합니다: `git checkout -b my-new-feature`
+3. 변경사항을 커밋합니다: `git commit -am 'Add some feature'`
+4. 브랜치에 푸시합니다: `git push origin my-new-feature`
+5. Pull Request를 제출합니다
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 라이센스
+
+MIT
