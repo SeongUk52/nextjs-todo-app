@@ -2,6 +2,12 @@
 
 import { useEffect } from 'react';
 
+declare global {
+  interface Window {
+    adsbygoogle: any[];
+  }
+}
+
 interface GoogleAdsenseProps {
   slot: string;
   style?: React.CSSProperties;
@@ -17,7 +23,6 @@ export default function GoogleAdsense({
 }: GoogleAdsenseProps) {
   useEffect(() => {
     try {
-      // @ts-expect-error
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {
       console.error('구글 애드센스 에러:', err);
