@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Todo } from '../types';
 import TodoItem from './TodoItem';
 import TodoForm from './TodoForm';
+import GoogleAdsense from './GoogleAdsense';
 
 export default function TodoList() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -77,12 +78,16 @@ export default function TodoList() {
   return (
     <div className="max-w-md p-4 mx-auto bg-white rounded-lg shadow-lg">
       <h1 className="my-4 text-2xl font-bold text-center text-indigo-600">투두 리스트</h1>
+      
+      {/* 상단 광고 */}
+      <GoogleAdsense slot="1234567890" />
+      
       <TodoForm onAdd={addTodo} />
       
       {Object.keys(todosByDate).length > 0 ? (
         Object.entries(todosByDate)
           .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
-          .map(([dateStr, dateTodos]) => (
+          .map(([dateStr, dateTodos], index) => (
             <div key={dateStr}>
               <h2 className="mt-4 mb-2 text-lg font-semibold text-gray-700">{dateStr}</h2>
               <ul>
@@ -96,11 +101,17 @@ export default function TodoList() {
                   />
                 ))}
               </ul>
+              
+              {/* 각 날짜 블록 사이에 광고 표시 (첫 번째 항목 이후) */}
+              {index === 0 && <GoogleAdsense slot="2345678901" />}
             </div>
           ))
       ) : (
         <p className="text-center text-gray-500">할 일이 없습니다. 새로운 할 일을 추가해보세요!</p>
       )}
+      
+      {/* 하단 광고 */}
+      <GoogleAdsense slot="3456789012" />
     </div>
   );
 } 
